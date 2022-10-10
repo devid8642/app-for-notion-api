@@ -40,6 +40,6 @@ def get_daily_tasks(list_db, token):
 if __name__ == '__main__':
 	load_dotenv()
 	token = getenv('SECRET_API_KEY')
-	dbs = [getenv('DATABASE_FRONT'), getenv('DATABASE_BACK'), getenv('DATABASE_SCHOOL')]
+	dbs = getenv('DATABASES').split('\n')
 	tasks = get_daily_tasks(dbs, token)
 	list_daily_tasks(tasks)
