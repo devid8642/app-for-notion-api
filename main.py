@@ -5,13 +5,15 @@ from dotenv import load_dotenv
 from os import getenv
 
 def list_daily_tasks(list_tasks):
-	pass
+	for task in list_tasks:
+		print(f'-> {task}')
 
 def get_daily_tasks(list_db, token):
 	today = str(dt.today())
 	headers = {
-		"Authorization": f"Bearer {token}",
-		"Notion-Version": "2021-08-16",
+		'Authorization': f'Bearer {token}',
+		'Content-Type': 'application/json',
+		'Notion-Version': '2022-06-28',
 	}
 	list_tasks = []
 
